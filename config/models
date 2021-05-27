@@ -1,0 +1,14 @@
+Playlist
+    ident Text
+    name Text
+    description Text
+    UniquePlaylist ident
+Music
+    ident Text
+    name Text
+    spotifyUrl Text
+    UniqueMusic ident
+PlaylistMusics
+    ident Text
+    playlistId PlaylistId Maybe
+    musicId MusicId Maybe

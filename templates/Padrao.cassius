@@ -1,0 +1,36 @@
+#background
+  background-color: #DEDEDE;
+  height: 100vh
+
+#menu
+  overflow: hidden;
+  background-color: #DEDEDE;
+  display: flex;
+  justify-content: center;
+  justify-content: center;
+  border-bottom: #283148 solid 0.5px;
+
+#menu a 
+  float: left
+  color: #283148
+  text-align: center
+  padding: 14px 16px
+  text-decoration: none
+  font-size: 17px
+  font-weight: bold
+  text-transform: uppercase
+
+#menu a:hover 
+  color: #fff
+  background: #283148
+
+#menu a.active 
+  color: #fff
+  background-color: #283148
+
+#footer
+  background: #DEDEDE
+  width: 100%;
+  text-align:center
+  color: #283148
+  align-self: flex-end;

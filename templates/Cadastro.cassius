@@ -1,0 +1,119 @@
+#background
+    background: url("../static/img/montanha.jpg")
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 100vh
+  
+img
+    margin-top: 3px;
+    margin-bottom: 1px;
+    margin-left: 40px;
+    width: 125px;
+
+#menu
+  overflow: hidden;
+  background-color: #000;
+  
+    
+
+#menu a 
+  float: left
+  color: #FFF
+  text-align: center
+  padding: 14px 16px
+  text-decoration: none
+  font-size: 17px
+  font-weight: bold
+  text-transform: uppercase
+
+
+#menu a:hover 
+  background: #FFF
+  color: #000
+
+
+#menu a.active 
+  background-color: #FFF
+  color: #000
+
+
+#header-content-indice
+    max-width:400px
+    margin: 10px auto
+    text-align:center
+
+h1.negrito
+    margin-top: 160px;
+    margin-bottom: 10px;
+    font-size: 60px;
+    color: #FFF;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    font-family: inherit;
+
+h1.negrito2
+    margin-bottom:20px
+    font-size:80px
+    color:#FFF
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+    font-family: inherit
+
+p.texto1 
+    font-size: 20px;
+    margin-bottom: 226px;
+    color: #FFF;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+
+#rodape
+  background: #000
+  padding: 1px 0
+
+
+#rodape-container
+  max-width: 1300px
+  margin: auto
+  padding: 0 5px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  flex-wrap: wrap-reverse
+
+#logobaixo
+   width: 180px
+
+h1.right-col
+  font-size: 26px;
+
+p.right-text
+    color:#FFF
+
+#link-content
+    text-decoration: none 
+    font-size: 1.5em
+    max-width:400px
+    margin:150px auto
+    text-align:center
+
+#link-content a:link
+    color: white
+    background-color: transparent
+    text-decoration: none
+
+#link-content a:visited
+    color: blue
+    background-color: transparent
+    text-decoration: none
+
+#link-content a:hover
+    color: yellow;
+    background-color: transparent
+    text-decoration: underline
+
+#link-content a:active
+    color: yellow
+    background-color: transparent
+    text-decoration: underline   

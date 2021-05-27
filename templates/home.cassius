@@ -1,0 +1,30 @@
+#background
+  background-color: #DEDEDE;
+  height: 100vh;
+
+#logo
+  position:relative
+  z-index: 1
+  top: 2
+  left: 0
+  overflow-x: hidden
+  padding-top: 5px
+
+#header
+  text-align:center
+  font-size: 30px;
+  color: #283148;
+  align-self: center
+
+h1.title
+  font-family: inherit;
+  font-size: 70px;
+  margin: 10px 0;
+  color: #283148;
+
+#container
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  height: 90%;
+  justify-content: space-around;

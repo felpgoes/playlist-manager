@@ -1,0 +1,28 @@
+ <div #background>
+    <div #menu>
+        <a class="active" href=@{PlaylistR}>Cadastro
+     
+    <div #header-content-indice>
+        <h1 class="negrito">Cadastro
+
+        $maybe mensa <- msg
+            <div>
+                ^{mensa}
+
+        <form method=post action=@{CriarPlaylistR}>
+            ^{widget}
+            $# <label>Nome
+            $#     <input class="form-control" type="text" id="name" required placeholder="Playlist calma">
+            $# <label>Descrição
+            $#     <input class="form-control" type="text" id="description" required placeholder="Playlist para estudar.">
+            $# <label>Id
+            $#     <input class="form-control" type="number" maxlength=3 id="ident" require>
+            $# <br>
+            <input type="submit" class="btn btn-primary mt-3" value="Cadastrar">
+   
+    <footer #rodape>
+        <div #rodape-container>
+            <div #logobaixo>
+                <img src="/static/img/logobranco.png">
+            <div #right-col>
+               <p class="right-text">Playlist Manager © 2021

@@ -1,0 +1,15 @@
+/static StaticR Static appStatic
+
+/favicon.ico FaviconR GET
+/robots.txt RobotsR GET
+
+/ HomeR GET
+
+/playlists ListPlaylistsR GET
+/playlist CriarPlaylistR POST
+/playlist/#PlaylistId PlaylistR GET
+/playlist/#PlaylistId/delete DelPlaylistR POST
+
+/playlist/#PlaylistId/musica MusicR GET
+/playlist/#PlaylistId/musica/#MusicId FindMusicR GET
+/playlist/#PlaylistId/musica/#MusicId/excluir DelMusicR POST
