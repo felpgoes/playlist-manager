@@ -1,0 +1,21 @@
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{ListPlaylistsR}>Playlists
+
+    <div #container>
+        <div #header>
+            <h1 class="subtitle">Criar Playlist
+
+        <form #form-container method=post action=@{CriarPlaylistR}>
+            ^{widget}
+            $#  <label>Nome
+            $#      <input class="form-control" type="text" id="name" required>
+            $#  <label>Descrição
+            $#      <input class="form-control" type="text" id="description" required>
+            $#  <label>Apelido
+            $#      <input class="form-control" type="number" maxlength=3 id="ident">
+            <input type="submit" #form-btn value="Cadastrar">
+   
+    <footer #footer>
+        <p>Playlist Manager © 2021

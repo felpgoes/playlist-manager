@@ -1,0 +1,39 @@
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a class="active" href=@{ListPlaylistsR}>Playlists
+
+    <div #container>
+        <div #header>
+            <h1 class="subtitle">Suas Playlists
+
+        <div #table .table-responsive>
+            <table class="table table-dark table-striped table-sm">
+                <thead>
+                    <tr>
+                        <th>Nome
+                        <th>Descrição
+                        <th>Apelido
+                        <th>Opções
+                <tbody>
+                    $forall Entity playId playlist <- playlists
+                        <tr>
+                            <td>
+                                #{playlistName playlist}
+                            
+                            <td>
+                                #{playlistDescription playlist}
+                            
+                            <td>
+                                #{playlistIdent playlist}
+                            
+                            <td #options-container>
+                                <form method=get action=@{PlaylistR playId}>
+                                    <input .btn .btn-info type="submit" value="Ver">
+                                <form method=post action=@{DelPlaylistR playId}>
+                                    <input .btn .btn-warn type="submit" value="Excluir">
+        <div #button-container>
+            <a #playlist-btn href=@{PlaylistFormR}>Criar Playlist
+
+    <footer #footer>
+        <p>Playlist Manager © 2021
