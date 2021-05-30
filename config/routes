@@ -6,10 +6,13 @@
 / HomeR GET
 
 /playlists ListPlaylistsR GET
-/playlist CriarPlaylistR POST
-/playlist/#PlaylistId PlaylistR GET
-/playlist/#PlaylistId/delete DelPlaylistR POST
 
-/playlist/#PlaylistId/musica MusicR GET
-/playlist/#PlaylistId/musica/#MusicId FindMusicR GET
-/playlist/#PlaylistId/musica/#MusicId/excluir DelMusicR POST
+/playlist PlaylistFormR GET
+/playlist/save CriarPlaylistR POST
+
+/playlist/detalhe/#PlaylistId PlaylistR GET
+/playlist/detalhe/#PlaylistId/delete DelPlaylistR POST
+
+/playlist/detalhe/#PlaylistId/musica MusicR GET
+/playlist/detalhe/#PlaylistId/musica/#MusicId FindMusicR GET
+/playlist/detalhe/#PlaylistId/musica/#MusicId/excluir DelMusicR POST

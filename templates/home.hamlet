@@ -3,12 +3,12 @@
  
     <div #menu>
         <a class="active" href=@{HomeR}>Home
-        <a href=@{CriarPlaylistR}>Criar Playlist
+        <a href=@{ListPlaylistsR}>Playlists
 
     <div #container>   
         <div #header>
             <h1 class="title">Playlist Manager
             <p> O seu gerenciador de playlists.
         
-        <footer #footer>
-            <p>Playlist Manager © 2021
+    <footer #footer>
+        <p>Playlist Manager © 2021
