@@ -1,0 +1,20 @@
+<div #background>
+  <div #menu>
+      <a href=@{HomeR}>Home
+      <a href=@{ListPlaylistsR}>Playlists
+  
+  $maybe mensa <- msg
+        <div>
+            ^{mensa}
+
+  <div #container>
+      <div #header>
+          <h1 class="subtitle">Login
+          
+      <div #login-container>
+        <form method=post action=@{route}>
+          ^{widget}
+            <input .btn .btn-info type="submit" value=#{mensagem}>
+
+  <footer #footer>
+      <p>Playlist Manager © 2021
