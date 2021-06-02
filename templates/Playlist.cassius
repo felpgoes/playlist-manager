@@ -19,7 +19,7 @@ h1.subtitle
   padding: 10rem;
   align-content: flex-start;
 
-#form-container
+#playlist-container
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -37,3 +37,15 @@ h1.subtitle
   width: 20rem;
   align-self: flex-end;
   height: 5rem;
+
+#field
+  display: flex;
+  gap: 1rem;
+
+#field-label
+  align-self: center;
+  font-weight: 700;
+
+#field-value
+  padding: 10px;
+

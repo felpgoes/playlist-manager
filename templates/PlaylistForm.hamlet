@@ -13,7 +13,7 @@
             $#      <input class="form-control" type="text" id="name" required>
             $#  <label>Descrição
             $#      <input class="form-control" type="text" id="description" required>
-            $#  <label>Apelido
+            $#  <label>Url
             $#      <input class="form-control" type="number" maxlength=3 id="ident">
             <input type="submit" #form-btn value="Cadastrar">
    

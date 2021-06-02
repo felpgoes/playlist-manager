@@ -32,13 +32,20 @@ h1.subtitle
   width: 100%;
   padding: 1rem;
   border-radius: 2rem;
-  border: 1px #fff solid;
+  border: 1px #2c3e50 solid;
+  background: #fff;
+
+#table-style
+  width: 90%;
+
+#table-head
+  border-bottom: 1px black solid;
 
 #button-container
-    width: 100%;
-    padding: 2rem;
-    display: flex;
-    justify-content: flex-end;
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  justify-content: flex-end;
 
 #playlist-btn
   background: #283148;
@@ -53,4 +60,8 @@ h1.subtitle
 #options-container
   display: flex;
   gap: 2rem;
-  width: 1rem;
+  width: 20rem;
+
+#listen-playlist
+  display: flex;
+  background-color: #000;

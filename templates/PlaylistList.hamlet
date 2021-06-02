@@ -8,12 +8,12 @@
             <h1 class="subtitle">Suas Playlists
 
         <div #table .table-responsive>
-            <table class="table table-dark table-striped table-sm">
-                <thead>
+            <table .table .table-striped #table-style >
+                <thead #table-head>
                     <tr>
                         <th>Nome
                         <th>Descrição
-                        <th>Apelido
+                        <th>Url
                         <th>Opções
                 <tbody>
                     $forall Entity playId playlist <- playlists
@@ -25,13 +25,15 @@
                                 #{playlistDescription playlist}
                             
                             <td>
-                                #{playlistIdent playlist}
+                                <a .btn .btn-success href=#{playlistExternalUrl playlist} target="_blank">Ouvir
                             
                             <td #options-container>
                                 <form method=get action=@{PlaylistR playId}>
                                     <input .btn .btn-info type="submit" value="Ver">
+                                <form method=get action=@{EditPlaylistR playId}>
+                                    <input .btn .btn-warning type="submit" value="Editar">
                                 <form method=post action=@{DelPlaylistR playId}>
-                                    <input .btn .btn-warn type="submit" value="Excluir">
+                                    <input .btn .btn-danger type="submit" value="Excluir">
         <div #button-container>
             <a #playlist-btn href=@{PlaylistFormR}>Criar Playlist
 

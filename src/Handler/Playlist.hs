@@ -10,11 +10,11 @@ import Import
 import Text.Cassius
 import Text.Julius
 
-formPlaylist :: Form Playlist
-formPlaylist = renderDivs $ Playlist
-    <$> areq textField "Nome "        Nothing
-    <*> areq textField "Descrição  "  Nothing
-    <*> areq textField "Apelido "     Nothing
+formPlaylist :: Maybe Playlist -> Form Playlist
+formPlaylist play = renderDivs $ Playlist
+    <$> areq textField "Nome "        (fmap playlistName play)
+    <*> areq textField "Descrição  "  (fmap playlistDescription play)
+    <*> areq textField "Url "     (fmap playlistExternalUrl play)
 
 getPlaylistR :: PlaylistId -> Handler Html
 getPlaylistR playId = do
@@ -27,7 +27,7 @@ getPlaylistR playId = do
 
 getPlaylistFormR :: Handler Html
 getPlaylistFormR = do   
-    (widget,_) <- generateFormPost formPlaylist
+    (widget,_) <- generateFormPost (formPlaylist Nothing)
     msg <- getMessage
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
@@ -37,7 +37,7 @@ getPlaylistFormR = do
 
 postCriarPlaylistR :: Handler Html
 postCriarPlaylistR = do
-    ((result,_),_) <- runFormPost formPlaylist
+    ((result,_),_) <- runFormPost (formPlaylist Nothing)
     case result of
         FormSuccess playlist -> do
             runDB $ insert playlist
@@ -61,3 +61,23 @@ getListPlaylistsR = do
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/PlaylistList.cassius")
         $(whamletFile "templates/PlaylistList.hamlet")
+
+getEditPlaylistR :: PlaylistId -> Handler Html
+getEditPlaylistR playId = do
+    playlist <- runDB $ get404 playId
+    (widget, _) <- generateFormPost (formPlaylist (Just playlist))
+    msg <- getMessage
+    defaultLayout (formWidget widget msg (EditPlaylistR playId) "Editar")
+
+postEditPlaylistR :: PlaylistId -> Handler Html
+postEditPlaylistR playId = do
+    oldPlaylist <- runDB $ get404 playId
+    ((result,_),_) <- runFormPost (formPlaylist Nothing)
+    case result of
+        FormSuccess newPlaylist -> do
+            runDB $ replace playId newPlaylist
+            redirect ListPlaylistsR
+        _ -> redirect HomeR
+
+formWidget :: Widget -> Maybe Html -> Route App -> Text -> Widget
+formWidget widget msg route mensagem = $(whamletFile "templates/PlaylistDefaultForm.hamlet")

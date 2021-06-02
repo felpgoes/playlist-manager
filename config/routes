@@ -12,7 +12,4 @@
 
 /playlist/detalhe/#PlaylistId PlaylistR GET
 /playlist/detalhe/#PlaylistId/delete DelPlaylistR POST
-
-/playlist/detalhe/#PlaylistId/musica MusicR GET
-/playlist/detalhe/#PlaylistId/musica/#MusicId FindMusicR GET
-/playlist/detalhe/#PlaylistId/musica/#MusicId/excluir DelMusicR POST
+/playlist/detalhe/#PlaylistId/edit EditPlaylistR GET POST
