@@ -24,7 +24,18 @@ h1.title
 
 #container
   display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
+  flex-direction: column;
   height: 90%;
-  justify-content: space-around;
+  justify-content: center;
+
+#new-user
+  justify-items: center
+  position: relative
+  margin-top: 120px
+  display: grid
+  grid-template-columns: auto
+  grid-gap: 0.5rem 1rem
+
+#buttons
+  display: flex;
+  gap: 2rem;

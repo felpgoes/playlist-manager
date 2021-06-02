@@ -13,3 +13,8 @@
 /playlist/detalhe/#PlaylistId PlaylistR GET
 /playlist/detalhe/#PlaylistId/delete DelPlaylistR POST
 /playlist/detalhe/#PlaylistId/edit EditPlaylistR GET POST
+
+/usuario UserR GET POST
+
+/login AuthUserR GET POST
+/logout LogoutUserR POST

@@ -2,6 +2,9 @@
     <div #menu>
         <a href=@{HomeR}>Home
         <a class="active" href=@{ListPlaylistsR}>Playlists
+        $maybe email <- user
+            <form #logout-btn method="post" action=@{LogoutUserR}>
+                <input .btn .btn-success type="submit" value="Logout">
 
     <div #container>
         <div #header>

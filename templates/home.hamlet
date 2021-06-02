@@ -4,11 +4,27 @@
     <div #menu>
         <a class="active" href=@{HomeR}>Home
         <a href=@{ListPlaylistsR}>Playlists
+        $maybe email <- user
+            <form #logout-btn method="post" action=@{LogoutUserR}>
+                <input .btn .btn-success type="submit" value="Logout">
+
 
     <div #container>   
         <div #header>
             <h1 class="title">Playlist Manager
             <p> O seu gerenciador de playlists.
-        
+        $maybe email <- user
+            Crie e veja suas playlists!
+
+        $nothing
+            <div #new-user>
+                <h2> Para utilizar o sistema você deve criar uma conta ou fazer o seu Login! 
+                <div #buttons>
+                    <form method="get" action=@{AuthUserR}>
+                        <input .btn .btn-info type="submit" value="Entrar">
+                    <form method="get" action=@{UserR}>
+                        <input .btn .btn-info type="submit" value="Cadastrar-se">
+
+
     <footer #footer>
         <p>Playlist Manager © 2021

@@ -34,3 +34,6 @@
   text-align:center
   color: #283148
   align-self: flex-end;
+
+#logout-btn
+  align-self: center;

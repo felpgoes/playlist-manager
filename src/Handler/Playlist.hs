@@ -8,7 +8,6 @@ module Handler.Playlist where
 
 import Import
 import Text.Cassius
-import Text.Julius
 
 formPlaylist :: Maybe Playlist -> Form Playlist
 formPlaylist play = renderDivs $ Playlist
@@ -19,6 +18,7 @@ formPlaylist play = renderDivs $ Playlist
 getPlaylistR :: PlaylistId -> Handler Html
 getPlaylistR playId = do
     playlist <- runDB $ get404 playId
+    user <- lookupSession "_ID"
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
@@ -29,6 +29,7 @@ getPlaylistFormR :: Handler Html
 getPlaylistFormR = do   
     (widget,_) <- generateFormPost (formPlaylist Nothing)
     msg <- getMessage
+    user <- lookupSession "_ID"
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
@@ -56,6 +57,7 @@ postDelPlaylistR playId = do
 getListPlaylistsR :: Handler Html
 getListPlaylistsR = do
     playlists <- runDB $ selectList [] [Desc PlaylistId]
+    user <- lookupSession "_ID"
     defaultLayout $ do
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
@@ -65,6 +67,7 @@ getListPlaylistsR = do
 getEditPlaylistR :: PlaylistId -> Handler Html
 getEditPlaylistR playId = do
     playlist <- runDB $ get404 playId
+    user <- lookupSession "_ID"
     (widget, _) <- generateFormPost (formPlaylist (Just playlist))
     msg <- getMessage
     defaultLayout (formWidget widget msg (EditPlaylistR playId) "Editar")
@@ -80,4 +83,4 @@ postEditPlaylistR playId = do
         _ -> redirect HomeR
 
 formWidget :: Widget -> Maybe Html -> Route App -> Text -> Widget
-formWidget widget msg route mensagem = $(whamletFile "templates/PlaylistDefaultForm.hamlet")
+formWidget widget msg route mensagem = $(whamletFile "templates/DefaultForm.hamlet")

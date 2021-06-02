@@ -8,7 +8,7 @@ module Handler.Home where
 
 import Import
 import Text.Cassius
-import Text.Julius
+
 --import Network.HTTP.Types.Status
 --import Database.Persist.Postgresql
 --import Network.HTTP.Types.Status
@@ -22,6 +22,7 @@ getHomeR :: Handler Html
 getHomeR = do
     defaultLayout $ do
         setTitle "Home"
+        user <- lookupSession "_ID"
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/Home.cassius")
