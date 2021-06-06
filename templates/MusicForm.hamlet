@@ -1,0 +1,18 @@
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{ListMusicsR}>Musics
+        $maybe email <- user
+            <form #logout-btn method="post" action=@{LogoutUserR}>
+                <input .btn .btn-success type="submit" value="Logout">
+
+    <div #container>
+        <div #header>
+            <h1 class="subtitle">Criar Music
+
+        <form #form-container method=post action=@{CriarMusicR}>
+            ^{widget}
+            <input type="submit" #form-btn value="Cadastrar">
+   
+    <footer #footer>
+        <p>Playlist Manager © 2021

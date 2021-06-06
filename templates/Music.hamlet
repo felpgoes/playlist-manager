@@ -1,0 +1,31 @@
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{ListMusicsR}>Musicas
+        $maybe email <- user
+            <form #logout-btn method="post" action=@{LogoutUserR}>
+                <input .btn .btn-success type="submit" value="Logout">
+
+    <div #container>
+        <div #header>
+            <h1 class="subtitle">Detalhes
+            
+        <div #music-container>
+            <div #field>
+                <p #field-label>Nome:
+                <p #field-value>#{musicName music}
+            
+            <div #field>
+                <p #field-label>Album:
+                <p #field-value>#{musicAlbum music}
+            
+            <div #field>
+                <p #field-label>Autor:
+                <p #field-value>#{musicAutor music}
+
+            <div #field>
+                <p #field-label>Url:
+                <a .btn .btn-success href=#{musicExternalUrl music} target="_blank">Ouvir
+
+    <footer #footer>
+        <p>Playlist Manager © 2021
