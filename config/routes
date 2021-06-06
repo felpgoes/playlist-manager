@@ -5,14 +5,14 @@
 
 / HomeR GET
 
-/playlists ListPlaylistsR GET
+/musics ListMusicsR GET
 
-/playlist PlaylistFormR GET
-/playlist/save CriarPlaylistR POST
+/music MusicFormR GET
+/music/save CriarMusicR POST
 
-/playlist/detalhe/#PlaylistId PlaylistR GET
-/playlist/detalhe/#PlaylistId/delete DelPlaylistR POST
-/playlist/detalhe/#PlaylistId/edit EditPlaylistR GET POST
+/music/detalhe/#MusicId MusicR GET
+/music/detalhe/#MusicId/delete DelMusicR POST
+/music/detalhe/#MusicId/edit EditMusicR GET POST
 
 /usuario UserR GET POST
 

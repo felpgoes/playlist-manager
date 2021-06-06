@@ -40,7 +40,7 @@ import Handler.Common
 import Handler.Home
 import Handler.User
 import Handler.Login
-import Handler.Playlist
+import Handler.Music
 
 
 -- This line actually creates our YesodDispatch instance. It is the second half

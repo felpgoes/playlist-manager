@@ -1,7 +1,7 @@
 <div #background>
   <div #menu>
       <a href=@{HomeR}>Home
-      <a href=@{ListPlaylistsR}>Playlists
+      <a href=@{ListMusicsR}>Musicas
   
   $maybe mensa <- msg
         <div>

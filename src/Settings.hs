@@ -46,7 +46,7 @@ data AppSettings = AppSettings
     , appDetailedRequestLogging :: Bool
     -- ^ Use detailed request logging system
     , appShouldLogAll           :: Bool
-    -- ^ Should all log messages be displayed?
+    -- ^ Should all log messages be dismsced?
     , appReloadTemplates        :: Bool
     -- ^ Use the reload version of templates
     , appMutableStatic          :: Bool

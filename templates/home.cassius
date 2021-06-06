@@ -27,6 +27,7 @@ h1.title
   flex-direction: column;
   height: 90%;
   justify-content: center;
+  text-align: center;
 
 #new-user
   justify-items: center

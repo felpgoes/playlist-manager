@@ -3,7 +3,7 @@
  
     <div #menu>
         <a class="active" href=@{HomeR}>Home
-        <a href=@{ListPlaylistsR}>Playlists
+        <a href=@{ListMusicsR}>Musicas
         $maybe email <- user
             <form #logout-btn method="post" action=@{LogoutUserR}>
                 <input .btn .btn-success type="submit" value="Logout">

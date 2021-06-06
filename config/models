@@ -1,7 +1,9 @@
-Playlist
+Music
     name Text
-    description Text
+    album Text
+    autor Text
     externalUrl Text
+
 
 User
     email Text
