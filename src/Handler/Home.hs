@@ -25,5 +25,5 @@ getHomeR = do
         user <- lookupSession "_ID"
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
-        toWidgetHead $(cassiusFile "templates/Home.cassius")
-        $(whamletFile "templates/Home.hamlet")
+        toWidgetHead $(cassiusFile "templates/home.cassius")
+        $(whamletFile "templates/home.hamlet")
