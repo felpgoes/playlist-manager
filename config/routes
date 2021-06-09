@@ -14,6 +14,8 @@
 /music/detalhe/#MusicId/delete DelMusicR POST
 /music/detalhe/#MusicId/edit EditMusicR GET POST
 
+/playlist/#UserId PlaylistR GET POST
+
 /usuario UserR GET POST
 
 /login AuthUserR GET POST

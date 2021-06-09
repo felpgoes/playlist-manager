@@ -21,8 +21,12 @@ formLogin = renderDivs $ (,)
 getUserR :: Handler Html
 getUserR = do
     (widget,_) <- generateFormPost formLogin
-    msg <- getMessage 
-    defaultLayout (formWidget widget msg UserR "Cadastrar")
+    msg <- getMessage
+    defaultLayout $ do
+        setTitle "Criar conta"
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        (formWidget widget msg UserR "Cadastrar")
 
 postUserR :: Handler Html
 postUserR = do

@@ -71,7 +71,11 @@ getEditMusicR mscId = do
     user <- lookupSession "_ID"
     (widget, _) <- generateFormPost (formMusic (Just music))
     msg <- getMessage
-    defaultLayout (formWidget widget msg (EditMusicR mscId) "Editar")
+    defaultLayout $ do
+        setTitle "Editar musica"
+        addStylesheet (StaticR css_bootstrap_css)
+        toWidgetHead $(cassiusFile "templates/Padrao.cassius")
+        (formWidget widget msg (EditMusicR mscId) "Editar") 
 
 postEditMusicR :: MusicId -> Handler Html
 postEditMusicR mscId = do

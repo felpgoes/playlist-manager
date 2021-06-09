@@ -11,8 +11,8 @@ import Text.Cassius
 
 formLogin :: Form User
 formLogin = renderDivs $ User
-        <$> areq textField "E-mail: " Nothing
-        <*> areq passwordField "Password: " Nothing
+    <$> areq textField "E-mail: " Nothing
+    <*> areq passwordField "Password: " Nothing
 
 getAuthUserR :: Handler Html
 getAuthUserR = do

@@ -3,9 +3,17 @@ Music
     album Text
     autor Text
     externalUrl Text
+    deriving Show
 
+Playlist
+    userId UserId
+    name Text
+    description Text
+    musicId MusicId
+    createdDate Day
 
 User
     email Text
     password Text
     UniqueEmail email
+    deriving Show
