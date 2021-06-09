@@ -1,0 +1,40 @@
+ <div #background>
+    <div #menu>
+        <a href=@{HomeR}>Home
+        <a href=@{ListMusicsR}>Musicas
+        <a class="active">Playlists
+        $maybe email <- user
+            <form #logout-btn method="post" action=@{LogoutUserR}>
+                <input .btn .btn-success type="submit" value="Logout">
+
+    <div #container>
+        <div #header>
+            <h1 class="subtitle">Suas Playlists
+
+        <div #table .table-responsive>
+            <table .table .table-striped #table-style >
+                <thead #table-head>
+                    <tr>
+                        <th>Nome
+                        <th>Descrição
+                        <th>Musica
+                        <th>Url
+                <tbody>
+                    $forall (Entity _ playlist, Entity _ music, Entity _ user) <- playlists
+                        <tr>
+                            <td>
+                                #{playlistName playlist}
+                            <td>
+                                #{playlistDescription playlist}
+        
+                            <td>
+                                #{musicName music}  
+                            
+                            <td>
+                                <a .btn .btn-success href=#{musicExternalUrl music} target="_blank">Ouvir
+
+        <div #button-container>
+            <a #music-btn href=@{PlaylistR userid}>Nova playlist
+
+    <footer #footer>
+        <p>Playlist Manager © 2021
