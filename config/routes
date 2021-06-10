@@ -15,7 +15,7 @@
 /music/detalhe/#MusicId/edit EditMusicR GET POST
 
 /playlist/#UserId PlaylistR GET POST
-/playlists/#UserId PlaylistsR GET
+/playlists PlaylistsR GET
 
 /usuario UserR GET POST
 

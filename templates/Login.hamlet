@@ -2,7 +2,7 @@
   <div #menu>
       <a href=@{HomeR}>Home
       <a href=@{ListMusicsR}>Musicas
-      <a>Playlists
+      <a href=@{PlaylistsR}>Playlists
   
   $maybe mensa <- msg
         <div>

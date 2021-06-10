@@ -20,7 +20,7 @@
                         <th>Musica
                         <th>Url
                 <tbody>
-                    $forall (Entity _ playlist, Entity _ music, Entity _ user) <- playlists
+                    $forall (Entity _ playlist, Entity _ user, Entity _ music) <- playlists
                         <tr>
                             <td>
                                 #{playlistName playlist}
@@ -34,7 +34,7 @@
                                 <a .btn .btn-success href=#{musicExternalUrl music} target="_blank">Ouvir
 
         <div #button-container>
-            <a #music-btn href=@{PlaylistR userid}>Nova playlist
+            $# <a #music-btn href=@{PlaylistR userid}>Nova playlist
 
     <footer #footer>
         <p>Playlist Manager © 2021

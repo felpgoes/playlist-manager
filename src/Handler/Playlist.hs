@@ -4,6 +4,8 @@
 {-# LANGUAGE MultiParamTypeClasses #-}
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE QuasiQuotes #-}
+{-# LANGUAGE ScopedTypeVariables #-}
+
 module Handler.Playlist where
 
 import Import
@@ -47,29 +49,19 @@ postPlaylistR uid = do
             redirect (PlaylistR uid)
         _ -> redirect HomeR
 
-getPlaylistsR :: UserId -> Handler Html
-getPlaylistsR userid = do 
+getPlaylistsR :: Handler Html
+getPlaylistsR = do 
     let sql = "SELECT ??,??,?? FROM playlist \
           \ INNER JOIN \"user\" ON \"user\".id = playlist.user_id \
           \ INNER JOIN music ON music.id = playlist.music_id \
-          \ WHERE \"user\".id = ?"
+          \ WHERE \"user\".email = ?"
     user <- lookupSession "_ID"
-    playlists <- runDB $ rawSql sql [toPersistValue userid] :: Handler [(Entity Playlist,Entity Music,Entity Playlist)]
+    playlists <- runDB $ rawSql sql [toPersistValue user] :: Handler [(Entity Playlist, Entity User, Entity Music)]
     defaultLayout $ do 
         addStylesheet (StaticR css_bootstrap_css)
         toWidgetHead $(cassiusFile "templates/Padrao.cassius")
         toWidgetHead $(cassiusFile "templates/PlaylistList.cassius")
         $(whamletFile "templates/PlaylistList.hamlet") 
-        -- [whamlet|
-        --     <h1>
-        --         Playlists de #{userEmail user}
-        --     <ul>
-        --         $forall (Entity _ playlist, Entity _ music, Entity _ _) <- playlists
-        --             <li>
-        --                 #{playlistName playlist}
-        --                 #{playlistDescription playlist}
-        --                 #{musicName music}
-        -- |]
 
 
 formWidget :: Widget -> Maybe Html -> Route App -> Text -> Widget

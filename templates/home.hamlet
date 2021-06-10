@@ -4,10 +4,10 @@
     <div #menu>
         <a class="active" href=@{HomeR}>Home
         <a href=@{ListMusicsR}>Musicas
-        <a>Playlists
         $maybe email <- user
             <form #logout-btn method="post" action=@{LogoutUserR}>
                 <input .btn .btn-success type="submit" value="Logout">
+            <a href=@{PlaylistsR}>Playlists
 
     <div #container>   
         <div #header>
