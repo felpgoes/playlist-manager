@@ -11,6 +11,7 @@ Playlist
     description Text
     musicId MusicId
     createdDate Day
+    deriving Show
 
 User
     email Text

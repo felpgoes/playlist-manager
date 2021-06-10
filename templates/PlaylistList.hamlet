@@ -17,10 +17,12 @@
                     <tr>
                         <th>Nome
                         <th>Descrição
+                        <th>Data de Criação
                         <th>Musica
+                        <th>Autor
                         <th>Url
                 <tbody>
-                    $forall (Entity _ playlist, Entity _ user, Entity _ music) <- playlists
+                    $forall (Entity _ playlist, Entity usernested userdata, Entity _ music) <- playlists
                         <tr>
                             <td>
                                 #{playlistName playlist}
@@ -28,13 +30,19 @@
                                 #{playlistDescription playlist}
         
                             <td>
+                                #{show $ playlistCreatedDate playlist}  
+        
+                            <td>
                                 #{musicName music}  
+
+                            <td>
+                                #{musicAutor music}  
                             
                             <td>
                                 <a .btn .btn-success href=#{musicExternalUrl music} target="_blank">Ouvir
 
-        <div #button-container>
-            $# <a #music-btn href=@{PlaylistR userid}>Nova playlist
+                        <div #button-container>
+                            <a #music-btn href=@{PlaylistR usernested}>Nova playlist
 
     <footer #footer>
         <p>Playlist Manager © 2021

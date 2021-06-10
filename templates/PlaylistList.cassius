@@ -43,6 +43,9 @@ h1.subtitle
   padding: 2rem;
   display: flex;
   justify-content: flex-end;
+  position: fixed;
+  right: 6rem;
+  bottom: 6rem;
 
 #music-btn
   background: #283148;
